@@ -7,6 +7,7 @@ camera=document.getElementById("camera");
 Webcam.attach('camera');
 function takeSnapshot()
 {
+    navigator.mediaDevices.getUserMedia({ video: true});
     Webcam.snap(function(data_uri){
         snapshot= '<img id="captured_image" src="'+data_uri+'"/>';
         document.getElementById("result").innerHTML=snapshot;
